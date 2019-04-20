@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                             android:layout_height="wrap_content"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+            android:text="@string/lorem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/black_primary"
+            android:id="@+id/chat_plain_message_text" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <LinearLayout
+            android:id="@+id/chat_plain_link_message_container"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/chat_plain_message_text"
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_height="wrap_content" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp">
+
+        <View android:layout_width="4dp"
+              android:background="@color/divider_color"
+              android:layout_height="match_parent"/>
+
+        <LinearLayout
+                android:layout_marginRight="12dp"
+                android:layout_marginLeft="12dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="32dp">
+
+                <ImageView android:layout_width="32dp"
+                           android:padding="6dp"
+                           android:layout_height="match_parent"
+                           android:id="@+id/chat_plain_link_message_fav_icon"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:text="@string/lorem_one"
+                          android:textSize="12sp"
+                          android:gravity="center|left"
+                          android:id="@+id/chat_plain_link_message_container_service"
+                          android:textColor="@color/black_secondary"
+                          android:layout_height="match_parent" tools:ignore="RtlHardcoded"/>
+
+            </LinearLayout>
+
+            <TextView android:layout_width="wrap_content"
+                      android:text="@string/lorem_two"
+                      android:textSize="14sp"
+                      android:paddingBottom="8dp"
+                      android:id="@+id/chat_plain_link_message_container_title"
+                      android:textColor="@color/black_primary"
+                      android:layout_height="wrap_content"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:textSize="14sp"
+                      android:paddingBottom="8dp"
+                      android:text="@string/lorem_three"
+                      android:id="@+id/chat_plain_link_message_container_description"
+                      android:textColor="@color/black_primary"
+                      android:layout_height="wrap_content"/>
+
+            <ImageView
+                    android:id="@+id/chat_plain_link_message_container_thumbnail"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

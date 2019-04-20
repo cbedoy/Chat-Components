@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Common Chat</string>
+    <string name="send">Send</string>
+    <string name="write_your_message">Write your message...</string>
+    <string name="lorem">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+        voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
+        provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+    </string>
+    <string name="lorem_one">Sed ut perspiciatis unde omnis iste natus error sit</string>
+    <string name="lorem_two">Nemo enim ipsam voluptatem quia voluptas sit</string>
+    <string name="lorem_three">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
+        nisi ut aliquid ex ea commodi consequatur?
+    </string>
+    <string name="credit">Made with ❤️ at Aguascalientes, Mexico\nCarlos Bedoy #iambedoy</string>
 </resources>

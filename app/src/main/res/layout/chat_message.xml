@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                             android:layout_height="wrap_content">
+
+
+    <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp" tools:srcCompat="@tools:sample/avatars"
+            android:id="@+id/chat_message_avatar"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="8dp"/>
+    <TextView
+            android:text="Bedoy"
+            android:maxLines="1"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chat_message_nickname" app:layout_constraintStart_toEndOf="@+id/chat_message_avatar"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp" app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+            android:text="14:00"
+            android:maxLines="1"
+            android:textSize="15sp"
+            android:textColor="@color/black_secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chat_message_date"
+            app:layout_constraintStart_toEndOf="@+id/chat_message_nickname"
+            android:layout_marginStart="8dp" android:layout_marginTop="4dp" app:layout_constraintTop_toTopOf="parent"/>
+    <android.support.v7.widget.RecyclerView
+            android:layout_width="0dp"
+            android:id="@+id/chat_message_recycler_view"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chat_message_nickname" app:layout_constraintVertical_bias="0.0"
+            android:layout_marginStart="12dp"
+            app:layout_constraintStart_toEndOf="@+id/chat_message_avatar" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="8dp"/>
+
+
+</android.support.constraint.ConstraintLayout>
