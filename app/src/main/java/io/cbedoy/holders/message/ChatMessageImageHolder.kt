@@ -6,11 +6,10 @@ import io.cbedoy.holders.base.BaseMessageHolder
 import io.cbedoy.models.Message
 import kotlinx.android.synthetic.main.chat_plain_image_message.*
 
-class ChatMessageImageHolder (override val containerView: View) : BaseMessageHolder(containerView){
+class ChatMessageImageHolder (override val containerView: View) : ChatMessagePlainHolder(containerView){
     override fun reload(data: Any) {
+        super.reload(data)
         data as Message
-
-        chat_plain_message_text.text = data.text
 
         if (data.metadata != null && data.metadata?.images != null){
             val images = data.metadata?.images

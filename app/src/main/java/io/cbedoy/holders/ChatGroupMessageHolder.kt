@@ -3,6 +3,7 @@ package io.cbedoy.holders
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.bumptech.glide.Glide
+import com.vstechlab.easyfonts.EasyFonts
 import io.cbedoy.adapter.MessagesAdapter
 import io.cbedoy.holders.base.BaseMessageHolder
 import io.cbedoy.models.GroupMessage
@@ -21,6 +22,9 @@ class ChatGroupMessageHolder(override val containerView: View) : BaseMessageHold
 
         val messagesAdapter = MessagesAdapter()
         messagesAdapter.dataModel = data.messages
+
+        chat_message_nickname.typeface = EasyFonts.robotoBlack(containerView.context)
+        chat_message_date.typeface = EasyFonts.robotoRegular(containerView.context)
 
         chat_message_recycler_view.adapter = messagesAdapter
         chat_message_recycler_view.layoutManager = LinearLayoutManager(containerView.context)

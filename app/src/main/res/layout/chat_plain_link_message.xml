@@ -4,21 +4,19 @@
                                              android:layout_height="wrap_content"
                                              xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-            android:text="@string/lorem"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="@color/black_primary"
-            android:id="@+id/chat_plain_message_text" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"/>
+    <include android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/chat_message_view"
+             layout="@layout/chat_message_view"
+             app:layout_constraintTop_toTopOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"/>
 
 
     <LinearLayout
             android:id="@+id/chat_plain_link_message_container"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/chat_plain_message_text"
+            app:layout_constraintTop_toBottomOf="@+id/chat_message_view"
             android:layout_width="match_parent"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
@@ -38,8 +36,7 @@
 
             <LinearLayout android:layout_width="match_parent" android:layout_height="32dp">
 
-                <ImageView android:layout_width="32dp"
-                           android:padding="6dp"
+                <ImageView android:layout_width="24dp"
                            android:layout_height="match_parent"
                            android:id="@+id/chat_plain_link_message_fav_icon"/>
 
@@ -70,6 +67,7 @@
                       android:layout_height="wrap_content"/>
 
             <ImageView
+                    android:layout_marginBottom="8dp"
                     android:id="@+id/chat_plain_link_message_container_thumbnail"
                     android:layout_width="match_parent" android:layout_height="wrap_content"/>
 

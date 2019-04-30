@@ -1,15 +1,21 @@
 package io.cbedoy
 
+import io.cbedoy.models.GroupMessage
 import io.cbedoy.models.Message
+import io.cbedoy.models.Reaction
 import io.cbedoy.models.User
 import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.random.Random
 
 object ChatProvider {
 
     private val users = ArrayList<User>()
     private val messages = ArrayList<Message>()
+    private val reactions = ArrayList<Reaction>()
 
     init {
+        initReactions()
         initUsers()
         initMessages()
     }
@@ -27,34 +33,77 @@ object ChatProvider {
         return messages.shuffled()[0]
     }
 
+    fun randomReactions(count: Int) : ArrayList<Reaction>{
+        val list = ArrayList<Reaction>()
+        if (count > 0) {
+            reactions.shuffled().subList(0, count).forEach {
+                list.add(it)
+            }
+        }
+
+        return list
+    }
+
+    fun groupMessage() : GroupMessage{
+        val groupMessage = GroupMessage()
+        groupMessage.user = ChatProvider.getUser()
+        groupMessage.date = Date()
+
+        val random = Random(System.currentTimeMillis())
+
+        val nextInt = random.nextInt(4)
+
+        for (j in 0..nextInt){
+            groupMessage.messages.add(ChatProvider.plainMessage())
+        }
+
+        return groupMessage
+    }
+
+    fun groupMessagesCount(count: Int) : ArrayList<GroupMessage>{
+        val messages = ArrayList<GroupMessage>()
+
+        for (i in 1..count){
+            messages.add(ChatProvider.groupMessage())
+        }
+
+        return messages
+    }
+
     private fun initMessages() {
 
+        val random = Random(System.currentTimeMillis())
+
         messages.add(Message("Build the project and then use the generated API"))
-        messages.add(Message("caminaremos de la mano otra vez en cada rincon del universo buscare"))
+        messages.add(Message("A classic love heart emoji, used for expressions of love. Displayed in various shades of red on most platforms. A similar emoji exists for the heart suit in a deck of playing cards."))
         messages.add(Message("Hello everyone"))
         messages.add(Message("any device that perceives its environment and takes actions that maximize"))
         messages.add(Message("experience to inform future decisions. Human-inspired AI"))
         messages.add(Message("AI research include reasoning, knowledge representation, planning, learning, natural language processing, perception and the ability to move and manipulate objects.[14] General intelligence is among the field's long-term goals"))
-        messages.add(Message("AI techniques have experienced a re"))
         messages.add(Message("nging problems in compu"))
         messages.add(Message("with concurrent discoveries i"))
         messages.add(Message("the machine could be considered \"intelligent\""))
         messages.add(Message("AI's founders were optimistic about the future"))
         messages.add(Message("Progress slowed and in 1974"))
         messages.add(Message("First of all, you must have a basic knowledge of the Java language for Android Development. "))
-        messages.add(Message("Set up Android Studio IDE of Android Development o"))
+        messages.add(Message("Emojipedia® is a registered trademark of Emojipedia Pty Ltd; Apple® is a registered trademark of Apple Inc; Microsoft® and Windows® are registered trademarks of Microsoft Corporation; Google® and Android™ are registered trademarks or trademarks of Google Inc in the United States and/or other countries."))
         messages.add(Message("Being comfortable with the course or the book is very important"))
         messages.add(Message("Understand the Activity Lifecycle as having the knowledge of the activity lifecycle is very"))
         messages.add(Message("Learn how to handle the configuration changes. Some device configurations can change during the runtime such as screen orientation, keyboard availability, and when the user enables multi-window mode. We must know how to handle these changes"))
         messages.add(Message("Know about the 3rd party libraries. We have Mindorks Android Store to browse through all the important Android libraries, projects, tools, and apps. Compare them with their GitHub stars."))
         messages.add(Message("They are not old school, but a neat structure on which a complex android framework is built."))
         messages.add(Message("possible knowledge, by considering every possible hypothesis and matching them against the data. In practice, it is almost never possible to"))
-        messages.add(Message("resulting in about three to five million cases"))
+        messages.add(Message("This doesn't work. as you've set, it's the background, so the content overrides the rounded corners, and if you have content that draws on the corners, you won't see them being rounded."))
         messages.add(Message("Approximately 33% of people with influenza are asymptomatic."))
         messages.add(Message("influenza in the early stages of these infections"))
         messages.add(Message("These viruses are only distantly related to the human parainfluenza viruses, which are RNA viruses belonging to the paramyxovirus family that are a common cause of respiratory infections in children such as croup,[37] but can also cause a disease similar to influenza in adults."))
         messages.add(Message("Viruses can replicate only in living cells"))
+        messages.add(Message("\uD83D\uDE48 \uD83D\uDE48 \uD83D\uDE48"))
+        messages.add(Message("\uD83D\uDE48 \uD83D\uDE49 \uD83D\uDE4A"))
 
+        messages.forEach {
+            it.reactions = randomReactions(random.nextInt(3))
+        }
     }
 
     private fun initUsers() {
@@ -82,5 +131,39 @@ object ChatProvider {
             "https://scontent.fmex4-1.fna.fbcdn.net/v/t1.0-1/p160x160/55468499_152570762436836_9060406546554421248_n.jpg?_nc_cat=105&_nc_ht=scontent.fmex4-1.fna&oh=7e611f8845909eb079054bdcd7263936&oe=5D3C0FA6"))
         users.add(User("Patricia Ruíz",
             "https://scontent.fmex4-1.fna.fbcdn.net/v/t1.0-1/p160x160/56398402_10161703493715333_96243413875163136_n.jpg?_nc_cat=103&_nc_ht=scontent.fmex4-1.fna&oh=a3671231ec037694ad2b9f3ad6972145&oe=5D2DC7B1"))
+    }
+
+    private fun initReactions(){
+        val random = Random(System.currentTimeMillis())
+
+        arrayListOf(
+            "\uD83D\uDE4A",
+            "\uD83D\uDE49",
+            "\uD83D\uDE4A",
+            "\uD83E\uDD2A",
+            "\uD83D\uDE0F",
+            "\uD83D\uDE11",
+            "\uD83D\uDE10",
+            "\uD83D\uDE2A",
+            "\uD83C\uDF47",
+            "\uD83E\uDD6D",
+            "\uD83E\uDD5D",
+            "\uD83C\uDF46",
+            "\uD83E\uDD51",
+            "\uD83C\uDF4E",
+            "\uD83C\uDF4D",
+            "\uD83D\uDC3D",
+            "\uD83D\uDC03",
+            "\uD83D\uDC39",
+            "\uD83E\uDD87",
+            "\uD83D\uDEA3",
+            "\uD83C\uDFDF️",
+            "\uD83C\uDFDC️",
+            "\uD83C\uDF0B"
+        ).forEach {
+            val count = random.nextInt(10) + 1
+
+            reactions.add(Reaction(it, count))
+        }
     }
 }

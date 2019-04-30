@@ -8,7 +8,7 @@
     <color name="background_color">#fafafa</color>
     <color name="white_color">#FFFFFF</color>
 
-    <color name="divider_color">#cccccc</color>
+    <color name="divider_color">#eaeaea</color>
 
     <color name="black_hint">#bdbdbd</color>
     <color name="black_secondary">#828282</color>
@@ -16,6 +16,8 @@
 
     <color name="link_color">#3FA7D6</color>
     <color name="black_holder">#66333333</color>
+    <color name="reaction_color">#3FA7D6</color>
+    <color name="reaction_color_holder">#333FA7D6</color>
 
     <!--
     <color name="color_one">#E4FDE1</color>

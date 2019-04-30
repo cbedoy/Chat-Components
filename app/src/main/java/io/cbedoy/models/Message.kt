@@ -1,29 +1,33 @@
 package io.cbedoy.models
 
+import io.cbedoy.holders.protocols.IBaseMessageType
+import io.cbedoy.holders.protocols.IBaseMessageType.TYPE.*
 import io.cbedoy.utils.Utils
 import java.util.*
+import kotlin.collections.ArrayList
 
-class Message{
+open class Message : IBaseMessageType {
     lateinit var user: User
     lateinit var text: String
     lateinit var date: Date
+    var reactions =  ArrayList<Reaction>()
     var metadata: Metadata? = null
 
-    fun getMessageType() : TYPE{
+    override fun getType() : IBaseMessageType.TYPE {
         return if (metadata == null || metadata?.type == null)
-            TYPE.plain
+            plain
         else {
             when {
-                metadata?.type == "image" -> TYPE.image
+                metadata?.type == "image" -> image
                 metadata?.type == "html" -> {
                     val providerName = metadata?.provider_name
                     if (Utils.mediaHosts.contains(providerName?.toLowerCase())){
-                        TYPE.media
+                        media
                     }else{
-                        TYPE.link
+                        link
                     }
                 }
-                else -> TYPE.media
+                else -> media
             }
         }
     }
@@ -32,9 +36,5 @@ class Message{
 
     constructor(text: String){
         this.text = text
-    }
-
-    enum class TYPE{
-        link, plain, media, image
     }
 }

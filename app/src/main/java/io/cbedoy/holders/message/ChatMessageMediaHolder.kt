@@ -7,18 +7,15 @@ import io.cbedoy.holders.base.BaseMessageHolder
 import io.cbedoy.models.Message
 import kotlinx.android.synthetic.main.chat_plain_media_message.*
 
-class ChatMessageMediaHolder(override val containerView: View) : BaseMessageHolder(containerView){
+class ChatMessageMediaHolder(override val containerView: View) : ChatMessagePlainHolder(containerView){
     override fun reload(data: Any) {
+        super.reload(data)
         data as Message
 
-        chat_plain_message_text.text = data.text
-
-        chat_plain_message_text.text = data.text
         chat_plain_message_media_service.text = data.metadata?.provider_name
         chat_plain_message_media_title.text = data.metadata?.title
         chat_plain_message_media_description.text = data.metadata?.description
 
-        chat_plain_message_text.typeface = EasyFonts.robotoRegular(containerView.context)
         chat_plain_message_media_service.typeface = EasyFonts.robotoRegular(containerView.context)
         chat_plain_message_media_title.typeface = EasyFonts.robotoBlack(containerView.context)
         chat_plain_message_media_description.typeface = EasyFonts.robotoMedium(containerView.context)

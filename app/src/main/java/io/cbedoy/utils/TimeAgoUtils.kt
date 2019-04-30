@@ -17,8 +17,8 @@ object TimeAgoUtils{
         val hourOfDay = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
 
         return when {
-            diff < hourOfDay * HOUR_MILLIS -> "today"
-            diff < 48 * HOUR_MILLIS -> "yesterday"
+            diff < hourOfDay * HOUR_MILLIS -> "Today"
+            diff < 48 * HOUR_MILLIS -> "Yesterday"
             diff < 30 * DAY_MILLIS -> (diff / DAY_MILLIS).toString() + " days ago"
             diff < 12 * MONT_MILLIS -> (diff / MONT_MILLIS).toString() + " months ago"
             else -> (diff / YEARS_MILLIS).toString() + " years ago"

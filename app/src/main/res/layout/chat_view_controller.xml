@@ -1,36 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
-                                             android:background="@color/background_color"
+                                             android:background="@color/white_color"
                                              android:layout_width="match_parent"
                                              android:layout_height="match_parent">
 
 
     <LinearLayout
             android:background="@color/white_color"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" android:id="@+id/chat_bottom_container">
 
-        <EditText
-                android:background="@android:color/transparent"
-                android:padding="8dp"
-                android:hint="@string/write_your_message"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:inputType="textMultiLine"
-                android:ems="10"
-                android:textColorHint="@color/black_hint"
-                android:textColor="@color/black_secondary"
-                android:id="@+id/editText" android:layout_weight="1"/>
-        <Button
-                android:text="@string/send"
-                android:background="@android:color/transparent"
-                android:textColor="@color/colorAccent"
-                android:layout_height="match_parent" android:id="@+id/button2"
-                android:layout_width="wrap_content"/>
+        <View
+                android:layout_width="match_parent"
+                android:background="@color/divider_color"
+                android:layout_height="1dp"/>
+
+        <LinearLayout
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:src="@drawable/action_face"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_margin="8dp"
+                    android:layout_height="match_parent"/>
+
+            <ImageView
+                    android:src="@drawable/action_camera"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_margin="8dp"
+                    android:layout_height="match_parent"/>
+
+            <ImageView
+                    android:src="@drawable/action_library"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_margin="8dp"
+                    android:layout_height="match_parent"/>
+
+            <ImageView
+                    android:src="@drawable/action_voice"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_margin="8dp"
+                    android:layout_height="match_parent"/>
+
+            <ImageView
+                    android:src="@drawable/action_cmd"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_margin="8dp"
+                    android:layout_height="match_parent"/>
+
+            <ImageView
+                    android:src="@drawable/action_gif"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_margin="8dp"
+                    android:layout_height="match_parent"/>
+
+        </LinearLayout>
+        <LinearLayout
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <EditText
+                    android:background="@android:color/transparent"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingRight="16dp"
+                    android:paddingLeft="16dp"
+                    android:hint="@string/write_your_message"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:inputType="textMultiLine"
+                    android:ems="10"
+                    android:textColorHint="@color/black_hint"
+                    android:textColor="@color/black_secondary"
+                    android:id="@+id/editText" android:layout_weight="1"/>
+
+            <Button
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/colorAccent"
+                    android:text="@string/send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+        </LinearLayout>
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView

@@ -51,6 +51,7 @@ class SplashActivity : AppCompatActivity() {
                     done.add(true)
                     if (done.size == links.size){
                         startActivity(Intent(applicationContext, MainActivity::class.java))
+                        finish()
                     }
                 }
             })

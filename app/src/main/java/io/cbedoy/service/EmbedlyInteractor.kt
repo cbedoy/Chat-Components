@@ -17,7 +17,7 @@ class EmbedlyInteractor : EmbedlyContract.IEmbedlyInteractor{
         val call = service.getExtractLink(url, BuildConfig.EMBEDLY_KEY)
         call.enqueue(object : Callback<Metadata>{
             override fun onFailure(call: Call<Metadata>, t: Throwable) {
-
+                callback.onCreatedMetadata()
             }
 
             override fun onResponse(call: Call<Metadata>, response: Response<Metadata>) {
